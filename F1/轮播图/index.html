@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   
+	   <title>轮播图</title>
+	   <style type="text/css">
+	        {*margin:0px;padding:0px}  
+		    li{list-style:none}
+			
+			.container 
+	        {   width:50%;
+			    height:100px;
+				margin: 0px auto;
+				background: url("image/1.jpg");
+				padding-left:50%;      
+				padding-top:520px;     
+			}
+			ul{width:180px;height:30px;overflow:hidden}   
+			li{width:30px;height:30px;background:url("image/1.png");float:left;margin:4px;cursor:pointer} 
+		    li.on{background:url("image/2.png")}   
+			.container .btn {
+				position: absolute;
+				top: 50%;
+				width: 30px;
+				height: 60px;
+				margin-top: -30px;
+				background: rgba(0,0,0,.5);
+				color: #fff;
+				text-align: center;
+				line-height: 60px;
+				font-size: 40px;
+				display: none;
+			}
+			.container:hover .btn{ 
+				display: block;
+				cursor: pointer;
+			}
+			.container .left { left: 0;}
+			.container .right { right: 0;}
+			
+			
+	   </style>
+	   <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	   <script type="text/javascript">
+	   $(function()
+	   {  $("ul li").click(function(){
+	        var code=$(this).attr("code");                            //code是我们第n个li，这里的this是ul li
+	        $(this).attr("class","on").siblings().removeClass("on");  //移除蓝色按钮和白色按钮，使蓝色按钮只出现一次
+		   //实现图片随按钮出现变换
+		  $(".container").fadeOut(500,function(){
+		    $(this).css({background:"url(image/"+code+".jpg)"}).fadeIn(500); //background随着发生变换，移到第几个li就对应第几个的jpg（已经命名好），fadein，这里的this是container
+		  
+		  })
+		  var t=setInterval(move,3000);
+		  function moveL(){
+	    			code--;
+	    			if(code==0){
+	    				code=3;  //如果这是第一张图片再按向左的按钮则切换到最后一张图 
+	    			}
+	    		    $("ul li").attr("class","on").siblings().removeClass("on");  //移除蓝色按钮和白色按钮，使黄色按钮只出现一次
+		  //实现图片随按钮出现变换
+		            $(".container").fadeOut(500,function(){
+		            $(this).css({background:"url(image/"+code+".jpg)"}).fadeIn(500); //background随着发生变换，移到第几个li就对应第几个的jpg（已经命名好），fadein，这里的this是container
+		  
+		  })
+	    		}
+		  function move(){
+	    			code++;
+	    			if(code==4){
+	    				code=1;  //如果这是最后一张图片再按向右的按钮则切换到第一张图
+	    			}
+					$(".container").css({background:"url(image/"+code+".jpg)"}).fadeIn(500);
+	    		}
+		  $(".container .left").click(function(){
+	    			moveL();	//点击左键调用向左切换函数
+	    		})
+	    		//右按钮点击事件
+	    		$(".container .right").click(function(){
+	    			move();    //点击右键调用向右切换函数
+	    		})		
+		
+		  })
+	     
+
+	    	})
+	      
+	
+       </script>
+   </head>
+   
+   
+   <body>
+   <div class ="container">
+         <ul>
+		   <li code="1"></li>
+		   <li code="2"></li>
+		   <li code="3"></li>
+		   <li code="4"></li>
+		 </ul>
+		 <div class="left btn"><</div>
+		 <div class="right btn">></div>
+		 
+   </div>
+      
+	   
+   </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   
+	   <title>轮播图</title>
+	   <style type="text/css">
+	        {*margin:0px;padding:0px}  
+		    li{list-style:none}
+			
+			.container 
+	        {   width:50%;
+			    height:100px;
+				margin: 0px auto;
+				background: url("image/1.jpg");
+				padding-left:50%;      
+				padding-top:520px;     
+			}
+			ul{width:180px;height:30px;overflow:hidden}   
+			li{width:30px;height:30px;background:url("image/1.png");float:left;margin:4px;cursor:pointer} 
+		    li.on{background:url("image/2.png")}   
+			
+			
+	   </style>
+	   <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	   <script type="text/javascript">
+	   $(function()
+	   {  $("ul li").click(function(){
+	        var code=$(this).attr("code");                            //code是我们第n个li，这里的this是ul li
+	        $(this).attr("class","on").siblings().removeClass("on");  //移除蓝色按钮和白色按钮，使黄色按钮只出现一次
+		  //实现图片随按钮出现变换
+		  $(".container").fadeOut(500,function(){
+		    $(this).css({background:"url(image/"+code+".jpg)"}).fadeIn(500); //background随着发生变换，移到第几个li就对应第几个的jpg（已经命名好），fadein，这里的this是container
+		  
+		  })
+		  })
+	     
+
+	    	})
+	      
+	
+       </script>
+   </head>
+   
+   
+   <body>
+   <div class ="container">
+         <ul>
+		   <li code="1"></li>
+		   <li code="2"></li>
+		   <li code="3"></li>
+		   <li code="4"></li>
+		 </ul>
+		 <div class="btnLeft">></div>
+		 <div class="btnRight"><</div>
+		 
+   </div>
+      
+	   
+   </body>
+</html>
+
