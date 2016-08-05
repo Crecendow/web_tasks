@@ -1,0 +1,33 @@
+           {*margin:0px;padding:0px}  
+		    li{list-style:none}
+			
+			.container 
+	        {   width:50%;
+			    height:500px;
+				margin: 0px auto;
+				background: url("image/1.jpg");
+				padding-left:50%;      
+				padding-top:100px;     
+			}
+			ul{width:180px;height:30px;overflow:hidden}   
+			li{width:30px;height:30px;background:url("image/1.png");float:left;margin:4px;cursor:pointer} 
+		    li.on{background:url("image/2.png")}   
+			.container .btn {
+				position: absolute;
+				top: 50%;
+				width: 30px;
+				height: 60px;
+				margin-top: -30px;
+				background: rgba(0,0,0,.5);
+				color: #fff;
+				text-align: center;
+				line-height: 60px;
+				font-size: 40px;
+				display: none;
+			}
+			.container:hover .btn{ 
+				display: block;
+				cursor: pointer;
+			}
+			.container .left { left: 0;}
+			.container .right { right: 0;}
