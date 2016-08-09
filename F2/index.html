@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+     <head>
+	     <meta charset="utf-8"/>
+		 <title> 猪页</title>
+		 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		 <script src="js/myjavascript.js"></script>
+		 <style>
+		    *{  margin:0;
+			    padding:0;
+				font-family:"微软雅黑";
+			 }
+			body{
+			    background:cyan;
+			 }
+			.form{
+			    position:absolute;
+				top:50%;
+				left:50%;
+				margin-left:-185px;
+				margin-top:-210px;
+				height:420px;
+				width:340px;
+				font-size:18px;
+				background:#fff;
+			}
+			#Location{
+			    float:left;
+				text-align:center;
+				width:170px;
+				padding:15px 0;
+				color:#545454;
+                background:url("1.jpg");
+				background-size:170px 54px;
+			}
+			#Category{
+			    float:right;
+				text-align:center;
+				width:170px;
+				padding:15px 0;
+				color:#545454;
+			}
+			#Location-content{
+			    clear:both;
+			}
+			
+            .inp1{
+			    padding:15px 0;
+			    top:100px;
+			    height:30px;
+				width:250px;
+				margin:0 auto;
+			}
+			.inp1>input {
+				text-align: left;
+				height: 30px;
+				width:250px;
+				margin: 0 auto;
+				transition: all 0.3s ease-in-out;
+			}
+			.inp2{
+			    position:relative;
+				float:left;
+				left:45px;
+			    padding:15px 0;
+			    height:30px;
+				width:190px;
+				margin:0 auto;
+			}
+			.inp2>input {
+				text-align: left;
+				height: 30px;
+				width: 65px;
+				margin: 0 auto;
+				transition: all 0.3s ease-in-out;
+			}
+			.inp3{
+			    position:relative;
+				position:right;
+				left:50px;
+				top:-45px;
+			    padding:15px 0;
+			    height:30px;
+				width:200px;
+				margin:0 auto;
+			}
+			.inp3>input {
+				text-align: left;
+				height: 30px;
+				width: 175px;
+				margin: 0 auto;
+				transition: all 0.3s ease-in-out;
+			}
+			.inp4{
+                padding:15px 0;
+			    height:30px;
+				width:250px;
+				margin:0 auto;
+			}
+			.inp4>input {
+				text-align:left;
+				height: 30px;
+				width: 250px;
+				margin: 0 auto;
+				transition: all 0.3s ease-in-out;
+			}
+		    .submit {
+				border: 1px solid #A6A6A6;
+				color: #a6a6a6;
+				height: 30px;
+				width: 202px;
+				text-align: center;
+				font-size: 13.333333px;
+				margin-left: 70px;
+				line-height: 30px;
+				margin-top: 30px;
+				transition: all 0.3s ease-in-out;
+			}
+		 </style>
+		  <script type="text/javascript">
+          function upperCase(x)
+          {
+           var y=document.getElementById(x).value
+           document.getElementById(x).value=y.toUpperCase()
+          }
+		  function isNull(z)
+		  {
+		    var a=document.getElementById(z).value
+			if(a=="")
+			{  alert("输入不能为空")
+			   return false;
+			}
+		  
+		  }
+          </script>
+	</head>
+    <body>
+	     <div class="form">
+		    <div id="Location">Location</div>
+			<div id="Category">Category</div>
+			<div id="Location-content">
+			     <div class="inp1"><input type="text" id="title" placeholder="title" onkeyup="upperCase(this.id)" /></div>
+				 <div class="inp2"><input type="text" id="price" placeholder="price" onkeyup="isNull(this.id)"/></div>
+				 <div class="inp3"><input type="text" id="option" placeholder="Specifical location(optional)" onkeyup="isNull(this.id)"/></div>
+				 <div class="inp4"><input type="text" id="description" placeholder="Description" onkeyup="isNull(this.id)"/></div>
+				 <div class="submit">提交</div>
+			</div>
+			<div id="Category-content">
+			     
+			
+			</div>
+
+		 </div>
+	
+	
+	
+	</body>
+	
+	
+</html>
+		 
+		 
